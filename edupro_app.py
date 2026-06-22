@@ -6,9 +6,16 @@ Expects an Excel file with three sheets: Users, Courses, Transactions
 
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+try:
+    import plotly.express as px
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
+except ImportError:
+    import subprocess
+    subprocess.run(["pip", "install", "plotly"], check=True)
+    import plotly.express as px
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
 import numpy as np
 
 # ── Page config ──────────────────────────────────────────────────────────────
