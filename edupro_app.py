@@ -1,3 +1,13 @@
+import subprocess
+import sys
+subprocess.run([sys.executable, "-m", "pip", "install", "matplotlib", "openpyxl"], check=True)
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import streamlit as st
 import pandas as pd
 import numpy as np
